@@ -16,14 +16,14 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs.input; [
-    zsh
-    bat
-    eza
-    fd
-    fzf
-    pfetch
-    neofetch
-    btop
+  environment.systemPackages = with pkgs; [
+    input.zsh
+    input.bat
+    input.eza
+    input.fd
+    input.fzf
+    input.pfetch
+    input.neofetch
+    input.btop
   ];
 }

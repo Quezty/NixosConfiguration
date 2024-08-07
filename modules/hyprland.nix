@@ -27,15 +27,15 @@ in
       NIXOS_OZONE_WL = "1";
     };
 
-    environment.systemPackages = with pkgs.input; [
-      waybar
-      hyprland
-      wl-clipboard
+    environment.systemPackages = with pkgs; [
+      input.waybar
+      input.hyprland
+      input.wl-clipboard
       dunst
       libnotify
       swww
       hyprpaper
-      hyprlock
+      input.hyprlock
       kitty
       rofi-wayland
       networkmanagerapplet
