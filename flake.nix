@@ -26,11 +26,7 @@
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./configuration.nix
-          ./My-nixModules/zsh.nix
-          ./My-nixModules/hyprland.nix
-          ./My-nixModules/tmux.nix
-          # inputs.home-manager.nixosModules.default
+          ./hosts/laptop/configuration.nix
         ];
       };
     };
