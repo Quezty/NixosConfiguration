@@ -3,9 +3,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./My-nixModules/hyprland.nix
-      ./My-nixModules/tmux.nix   
-      ./My-nixModules/zsh.nix
+      ../../modules/hyprland.nix
+      ../../modules/tmux.nix
+      ../../modules/zsh.nix
     ];
 
   # Bootloader.
