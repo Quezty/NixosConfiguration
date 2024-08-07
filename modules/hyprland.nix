@@ -1,16 +1,16 @@
-{ inputs, pkgs, ...}:
-let
- input = inputs.nixpkgs.legacyPackages.${pkgs.system}; 
-in
+{ pkgs, lib, config, ...}:
+
 {
   options = {
-    hyprlandMod.enable = {
-      lib.mkEnableOption = "enables hyprlandMod";
-      lib.mkDefault = true;
+    hyprlandMod = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true; 
+      }; 
     };
   };
 
-  config = 
+  config = lib.mkIf config.hyprlandMod.enable 
   {
     programs.hyprland = {
       enable = true;
@@ -28,14 +28,14 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-      input.waybar
-      input.hyprland
-      input.wl-clipboard
+      waybar
+      hyprland
+      wl-clipboard
       dunst
       libnotify
       swww
       hyprpaper
-      input.hyprlock
+      hyprlock
       kitty
       rofi-wayland
       networkmanagerapplet

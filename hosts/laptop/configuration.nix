@@ -1,12 +1,17 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ../../modules/hyprland.nix
       ../../modules/tmux.nix
       ../../modules/zsh.nix
+      ../../modules/dev.nix
     ];
+
+  
+  hyprlandMod.enable = true;
+  devPackages.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,6 +43,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "discord-0.0.61"
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
