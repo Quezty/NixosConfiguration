@@ -7,6 +7,7 @@
       ../../modules/tmux.nix
       ../../modules/zsh.nix
       ../../modules/dev.nix
+      # ../../modules/wezterm.nix
     ];
 
   
@@ -67,12 +68,12 @@
     pulse.enable = true;
   };
 
-  # home-manager = {
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     "joachimos" = import ./home.nix;
-  #   };
-  # };
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "joachimos" = import ./home.nix;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
