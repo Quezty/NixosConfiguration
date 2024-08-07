@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, ... }:
 {
   imports =
     [
@@ -43,17 +43,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-             "discord-0.0.61"
-  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
-    git
-    gh
     firefox
     discord
     brightnessctl
