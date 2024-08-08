@@ -6,10 +6,7 @@
 	plugins = with pkgs; [
 	    tmuxPlugins.better-mouse-mode
         tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.rose-pine
 	];
-    extraConfigBeforePlugins = ''
-        set -g @plugin 'rose-pine/tmux'
-        set -g @rose-pine-variant 'moon'
-    '';
   };
 }

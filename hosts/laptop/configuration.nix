@@ -5,9 +5,15 @@
       ./hardware-configuration.nix
     ];
 
+  # Disabling or enabling my own modules  
   hyprlandMod.enable = true;
   devPackages.enable = true;
+  generalPackages.enable = true; 
+  sshPort22.enable = false;
+
+
   programs.zsh.enable = true;
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -45,8 +51,6 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
-    firefox
-    discord
     brightnessctl
   ];
 
@@ -61,6 +65,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   # home-manager = {

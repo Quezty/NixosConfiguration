@@ -1,19 +1,22 @@
 { pkgs, lib, config, ...}: 
 {
   options = {
-    devPackages = {
+    generalPackages = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = false;
+        default = true;
       };
     };
   };
 
-  config = lib.mkIf config.devPackages.enable 
+  config = lib.mkIf config.generalPackages.enable 
   {
     environment.systemPackages = with pkgs; [
-      insomnia
-      gh
+      discord
+      ventoy-full
+      firefox
+      spotify
+      obsidian
     ];
   };
 }
