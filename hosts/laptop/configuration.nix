@@ -5,7 +5,6 @@
       ./hardware-configuration.nix
     ];
 
-  
   hyprlandMod.enable = true;
   devPackages.enable = true;
 

@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,15 +22,26 @@
         modules = [
           ./hosts/laptop/configuration.nix
           ./nixosModules
+          home-manager.nixosModules.home-manager 
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.joachimos = import ./hosts/laptop/home.nix;
+          }
         ];
       };
 
-      homeConfigurations = {
-        laptop = {
-          system = "x86_64-linux";
-          home-manager.user.joachimos = import ./hosts/laptop/home.nix;
-          };
-      };
+      # homeManagerModules.laptop = ./hosts/laptop/home-manager.nix;
+
+      # homeConfigurations = {
+      #   laptop = home-manager.lib.homeManagerConfiguration {
+      #     system = "x86_64-linux";
+      #     homeDirectory = "/home/joachimos/";
+      #     stateVersion = "24.05";
+      #     configuration.imports = [ ./hosts/laptop/home.nix ];
+      #     };
+      # };
 
       #nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
        # system = "x86_64-linux";
