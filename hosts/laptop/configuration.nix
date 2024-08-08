@@ -7,6 +7,7 @@
 
   hyprlandMod.enable = true;
   devPackages.enable = true;
+  programs.zsh.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

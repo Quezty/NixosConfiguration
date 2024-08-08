@@ -5,7 +5,6 @@
     ../../homeManagerModules/default.nix
   ];
 
-
   home.username = "joachimos";
   home.homeDirectory = "/home/joachimos";
   

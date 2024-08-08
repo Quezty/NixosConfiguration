@@ -1,12 +1,12 @@
 { inputs, config, pkgs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      ../../modules/hyprland.nix
-      ../../modules/tmux.nix
-      ../../modules/zsh.nix
     ];
+
+  hyprlandMod.enable = true;
+  devPackages.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -34,7 +34,6 @@
     isNormalUser = true;
     description = "Joachim Olsen Storli";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -45,11 +44,9 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
-    git
-    gh
     firefox
     discord
-    neofetch
+    brightnessctl
   ];
 
   fonts.packages = with pkgs; [
