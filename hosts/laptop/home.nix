@@ -8,7 +8,7 @@
   home.username = "joachimos";
   home.homeDirectory = "/home/joachimos";
   
-  useWezterm.enable = true;
+  useWezterm.enable = false;
 
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
