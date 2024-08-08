@@ -25,15 +25,21 @@
         ];
       };
 
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        systems = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/desktop/configuration.nix
-          ./nixosModules  
-        ];
+      homeConfigurations = {
+        laptop = {
+          system = "x86_64-linux";
+          home-manager.user.joachimos = import ./hosts/laptop/home.nix;
+          };
       };
 
-      homeManagerModules.default = ./homeManagerModules;
+      #nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+       # system = "x86_64-linux";
+       # specialArgs = { inherit inputs; };
+       # modules = [
+       #   ./hosts/desktop/configuration.nix
+       #   ./nixosModules  
+       # ];
+      #};
+ 
     };
 }
