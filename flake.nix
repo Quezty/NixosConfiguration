@@ -32,25 +32,20 @@
         ];
       };
 
-      # homeManagerModules.laptop = ./hosts/laptop/home-manager.nix;
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop/configuration.nix
+          ./nixosModules
+          home-manager.nixosModules.home-manager 
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-      # homeConfigurations = {
-      #   laptop = home-manager.lib.homeManagerConfiguration {
-      #     system = "x86_64-linux";
-      #     homeDirectory = "/home/joachimos/";
-      #     stateVersion = "24.05";
-      #     configuration.imports = [ ./hosts/laptop/home.nix ];
-      #     };
-      # };
-
-      #nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-       # system = "x86_64-linux";
-       # specialArgs = { inherit inputs; };
-       # modules = [
-       #   ./hosts/desktop/configuration.nix
-       #   ./nixosModules  
-       # ];
-      #};
- 
+            home-manager.users.joachimos = import ./hosts/laptop/home.nix;
+          }
+        ];
+      };     
     };
 }
