@@ -7,5 +7,6 @@
     ./zsh.nix
     ./generalPkgs.nix
     ./ssh.nix
+    ./plasma.nix
   ];
 }

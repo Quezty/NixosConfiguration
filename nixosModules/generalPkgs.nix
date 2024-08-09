@@ -17,6 +17,7 @@
       firefox
       spotify
       obsidian
+      vlc
     ];
   };
 }

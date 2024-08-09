@@ -14,6 +14,9 @@
     environment.systemPackages = with pkgs; [
       insomnia
       gh
+      inetutils
+      nmap
+      vscode
     ];
   };
 }

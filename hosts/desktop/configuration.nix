@@ -6,14 +6,20 @@
     ];
 
   # Disabling or enabling my own modules  
-  useHyprland.enable = true;
+  useHyprland.enable = false;
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;
+  useKDEPlasma.enable = true;
 
 
   programs.zsh.enable = true;
 
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.finegrained = false;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -37,9 +43,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.joachimos = {
+  users.users.joachims = {
     isNormalUser = true;
-    description = "Joachim Olsen Storli";
+    description = "Joachim Storli";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -51,7 +57,6 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
-    brightnessctl
   ];
 
   fonts.packages = with pkgs; [
