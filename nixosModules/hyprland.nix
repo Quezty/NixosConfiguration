@@ -2,7 +2,7 @@
 
 {
   options = {
-    hyprlandMod = {
+    useHyprland = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = true; 
@@ -10,7 +10,7 @@
     };
   };
 
-  config = lib.mkIf config.hyprlandMod.enable 
+  config = lib.mkIf config.useHyprland.enable 
   {
     programs.hyprland = {
       enable = true;
@@ -20,6 +20,7 @@
     services.xserver = {
       enable = true;
     };
+
     services.displayManager.sddm.enable = true;
     environment.sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1";

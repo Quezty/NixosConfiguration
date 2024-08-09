@@ -6,7 +6,11 @@
 	plugins = with pkgs; [
 	    tmuxPlugins.better-mouse-mode
         tmuxPlugins.vim-tmux-navigator
-        tmuxPlugins.rose-pine
+        tmuxPlugins.nord
 	];
+    extraConfig= ''
+      set-option -g status-position top
+    '';
+    #       set-option -g status-style bg=default
   };
 }

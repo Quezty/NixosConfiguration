@@ -4,5 +4,6 @@
     ./wezterm.nix
     ./git.nix
     ./zsh.nix
+    ./kitty.nix
   ];
 }

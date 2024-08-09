@@ -6,7 +6,7 @@
     ];
 
   # Disabling or enabling my own modules  
-  hyprlandMod.enable = true;
+  useHyprland.enable = true;
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;

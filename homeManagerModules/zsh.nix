@@ -2,16 +2,16 @@
 
 
 {
-  #options.addZsh = {
-  #  enable = lib.mkOption {
-  #    type = lib.types.bool;
-  #    default = true;
-  #    description = "Enable zsh and my config";
-  #  };
-  #};
+  options.addZsh = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable zsh and my config";
+    };
+  };
 
 
-  config =  
+  config = lib.mkIf config.addZsh.enable  
   {
     programs.zsh = {
       enable = true;
