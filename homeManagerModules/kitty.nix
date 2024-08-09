@@ -16,7 +16,11 @@
     programs.kitty = {
       enable = true;
       theme = "Catppuccin-Mocha";
-      extraConfig = "background_opacity 0.5";
+      extraConfig = "
+        background_opacity 0.5
+        map ctrl+alt+enter launch --cwd=current
+        cursor_shape beam
+      ";
     };
   };
 }
