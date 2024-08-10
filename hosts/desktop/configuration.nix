@@ -16,9 +16,17 @@
   programs.zsh.enable = true;
 
 
+  services.xserver.videoDrivers = ["nvidia"];
+
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.finegrained = false;
+    powerManagement = {
+      enable = false;
+      finegrained = false;
+    }; 
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   hardware.graphics.enable = true;
@@ -74,13 +82,6 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
-
-  # home-manager = {
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     "joachimos" = import ./home.nix;
-  #   };
-  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
