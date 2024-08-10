@@ -19,7 +19,7 @@
       extraConfig = "
         background_opacity 0.5
         map ctrl+alt+enter launch --cwd=current
-        cursor_shape beam
+        cursor_shape block
       ";
     };
   };
