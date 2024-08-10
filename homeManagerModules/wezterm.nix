@@ -25,7 +25,10 @@
           leader = {key="Space", mods = "CTRL", timeout_milliseconds = 1000},
           keys = {
             {key="v", mods="LEADER", action = wezterm.action.SplitVertical ({domain = "CurrentPaneDomain"})},
-            {key="h", mods="LEADER", action = wezterm.action.SplitHorizontal ({domain = "CurrentPaneDomain"})}
+            {key="h", mods="LEADER", action = wezterm.action.SplitHorizontal ({domain = "CurrentPaneDomain"})},
+            {key="c", mods="LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain")},
+            {key="p", mods="LEADER", action = wezterm.action.MoveTabRelative(-1)},
+            {key="n", mods="LEADER", action = wezterm.action.MoveTabRelative(1)}
           }
         }
       '';
