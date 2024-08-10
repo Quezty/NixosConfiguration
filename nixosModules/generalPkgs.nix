@@ -19,6 +19,7 @@
       obsidian
       vlc
       wl-clipboard
+      pavucontrol
     ];
   };
 }
