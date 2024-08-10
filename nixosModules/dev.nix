@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [
       insomnia
       gh
+      lazygit
       inetutils
       nmap
       vscode
