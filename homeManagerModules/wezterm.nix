@@ -17,10 +17,11 @@
       enable = true;
       extraConfig = ''
         return {
-          color_scheme = "nord",
+          color_scheme = "rose-pine-moon",
           enable_wayland = false,
           hide_tab_bar_if_only_one_tab = true,
           window_background_opacity = 0.5,
+          font = wezterm.font("JetBrainsMono Nerd Font", {weight="Bold", stretch="Normal", style="Normal"})        
         }
       '';
     };

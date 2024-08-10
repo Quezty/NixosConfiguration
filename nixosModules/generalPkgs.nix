@@ -18,6 +18,7 @@
       spotify
       obsidian
       vlc
+      wl-clipboard
     ];
   };
 }
