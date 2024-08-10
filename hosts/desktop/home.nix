@@ -6,10 +6,10 @@
   ];
 
 
-  home.username = "joachimos";
-  home.homeDirectory = "/home/joachimos";
+  home.username = "joachims";
+  home.homeDirectory = "/home/joachims";
   
-  useWezterm.enable = false;
+  useWezterm.enable = true;
   addGit.enable = true;
   useKitty.enable = true;
 

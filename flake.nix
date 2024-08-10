@@ -42,8 +42,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
 
-            home-manager.users.joachimos = import ./hosts/laptop/home.nix;
+            home-manager.users.joachims = import ./hosts/desktop/home.nix;
           }
         ];
       };     
