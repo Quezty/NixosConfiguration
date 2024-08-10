@@ -12,7 +12,7 @@
   config = lib.mkIf config.generalPackages.enable 
   {
     environment.systemPackages = with pkgs; [
-      discord
+      vesktop
       ventoy-full
       firefox
       spotify
