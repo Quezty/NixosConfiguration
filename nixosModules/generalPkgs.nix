@@ -21,6 +21,7 @@
       vlc
       wl-clipboard
       pavucontrol
+      home-manager
     ];
   };
 }
