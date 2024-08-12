@@ -19,7 +19,7 @@
         return {
           color_scheme = "rose-pine-moon",
           enable_wayland = false,
-          hide_tab_bar_if_only_one_tab = true,
+          enable_tab_bar = false,
           font = wezterm.font("JetBrainsMono Nerd Font", {weight="Bold", stretch="Normal", style="Normal"}),
           leader = {key="Space", mods = "CTRL", timeout_milliseconds = 1000},
           keys = {
@@ -36,7 +36,7 @@
 
           inactive_pane_hsb = {
             saturation = 0.74,
-            brightness = 0.2
+            brightness = 0.4
           },
 
           background = {
@@ -54,11 +54,11 @@
             },
             {
               source = {
-                Color = "282c35",
+                Color = "46474f",
               },
               width = "100%",
               height = "100%",
-              opacity = 0.55,
+              opacity = 0.35,
             }
           }
         }

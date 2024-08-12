@@ -9,8 +9,9 @@
   useHyprland.enable = false;
   devPackages.enable = true;
   generalPackages.enable = true; 
-  sshPort22.enable = false;
+  sshPort22.enable = true;
   useKDEPlasma.enable = true;
+  addDistrobox.enable = true;
 
 
   programs.zsh.enable = true;

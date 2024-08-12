@@ -2,6 +2,7 @@
 {
   imports = [
     ./dev.nix
+    ./distrobox.nix
     ./tmux.nix
     ./hyprland.nix
     ./zsh.nix
