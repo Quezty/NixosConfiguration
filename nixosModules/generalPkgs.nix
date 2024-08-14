@@ -15,7 +15,6 @@
       vesktop
       ventoy-full
       firefox
-      librewolf
       spotify
       obsidian
       vlc
