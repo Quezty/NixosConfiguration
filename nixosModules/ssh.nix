@@ -16,7 +16,7 @@
     # Enabling the ssh daemon and opening port 22  
     services.openssh = {
       enable = true;
-      settings.PasswordAuthentication = false;
+      settings.PasswordAuthentication = true;
       ports = [22];
     };
       

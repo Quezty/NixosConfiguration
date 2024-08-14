@@ -42,7 +42,7 @@
           background = {
             {
               source = {
-                File = "/home/joachims/repos/NixosConfiguration/common/wezterm-background.jpg",
+                File = "/home/joachims/repos/NixosConfiguration/common/IdkAtthispoint.jpg",
               },
               hsb = {
                 hue = 1.0,
