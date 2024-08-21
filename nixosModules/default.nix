@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./bluetooth.nix
     ./dev.nix
     ./distrobox.nix
     ./tmux.nix
