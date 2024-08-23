@@ -20,6 +20,7 @@
         background_opacity 0.5
         map ctrl+alt+enter launch --cwd=current
         cursor_shape block
+        window_margin_width 2
       ";
     };
   };

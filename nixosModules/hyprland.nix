@@ -29,20 +29,18 @@
     };
 
     environment.systemPackages = with pkgs; [
-      waybar
-      hyprland
-      wl-clipboard
-      dunst
-      libnotify
-      swww
-      hyprpaper
-      hyprlock
-      kitty
-      rofi-wayland
-      networkmanagerapplet
-      grim
-      slurp
-      imv
+      waybar # Fancy bar at the top :)
+      hyprland # Grabbing the hyprland package
+      wl-clipboard # Clipboard 
+      dunst # Notification daemon
+      libnotify # Used to send notifications through dunst
+      hyprpaper # Wallpaper service for hyprland 
+      hyprlock # Enables locking of the screen
+      kitty # Base terminal for hyprland, will be changed to wezterm later 
+      rofi-wayland # Window switching application
+      grim # Take picture of screen or region selected by Slurp
+      slurp # Select region of screen
+      imv # View images in the terminal, supported in kitty
     ];
 
     hardware = {

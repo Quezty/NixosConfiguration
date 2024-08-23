@@ -10,6 +10,7 @@
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;
+  addBluetooth.enable = true;
 
 
   programs.zsh.enable = true;
