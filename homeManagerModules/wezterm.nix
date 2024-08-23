@@ -28,6 +28,7 @@
             {key="c", mods="LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain")},
             {key="p", mods="LEADER", action = wezterm.action.MoveTabRelative(-1)},
             {key="n", mods="LEADER", action = wezterm.action.MoveTabRelative(1)},
+            {key="x", mods="LEADER", action = wezterm.action.CloseCurrentPane({ confirm = true })},
             {key="h", mods="CTRL", action = wezterm.action.ActivatePaneDirection("Left")},
             {key="j", mods="CTRL", action = wezterm.action.ActivatePaneDirection("Down")},
             {key="k", mods="CTRL", action = wezterm.action.ActivatePaneDirection("Up")},
@@ -42,7 +43,7 @@
           background = {
             {
               source = {
-                File = "/home/joachims/repos/NixosConfiguration/common/IdkAtthispoint.jpg",
+                File = "/home/joachims/repos/NixosConfiguration/common/wezterm-background.jpg",
               },
               hsb = {
                 hue = 1.0,
