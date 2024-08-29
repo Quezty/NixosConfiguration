@@ -19,8 +19,8 @@
       autosuggestion.enable = true;
       enableCompletion = true;
       shellAliases = {
-        nxim = "nix run /home/joachims/nixvim .";
-        snxim = "sudo nix run /home/joachims/nixvim .";
+        nxim = "nix run ~/nixvim .";
+        snxim = "sudo nix run ~/nixvim .";
         ls = "eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"; 
         tls = "eza --tree --level=2 --icons=always --color=always";
         tlsd = "eza --tree --level=6 --icons=always --color=always";
