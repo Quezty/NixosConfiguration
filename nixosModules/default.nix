@@ -10,5 +10,6 @@
     ./generalPkgs.nix
     ./ssh.nix
     ./plasma.nix
+    ./sound.nix
   ];
 }
