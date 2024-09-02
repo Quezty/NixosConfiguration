@@ -12,6 +12,7 @@
   sshPort22.enable = false;
   useKDEPlasma.enable = true;
   addDistrobox.enable = true;
+  addSound.enable = true;
 
 
   programs.zsh.enable = true;
