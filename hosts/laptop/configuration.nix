@@ -11,6 +11,7 @@
   generalPackages.enable = true; 
   sshPort22.enable = false;
   addBluetooth.enable = true;
+  addSound.enable = true;
 
 
   programs.zsh.enable = true;
