@@ -2,7 +2,7 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
+    "$mainMod" = "SUPER";
 
     bindm = [
       "$mainMod, mouse:272, movewindow"
@@ -12,7 +12,7 @@
     bind = [
       
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      "$mainMod, Q, exec, kitty"
+      "CTRL, Q, exec, kitty"
       "$mainMod, C, killactive, "
       "$mainMod, M, exit, "
       "$mainMod, E, exec, dolphin"

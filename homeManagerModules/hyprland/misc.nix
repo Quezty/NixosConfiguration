@@ -7,10 +7,18 @@
       "hyprlock"
     ];
 
+    input = {
+      kb_layout = "us";
+    };
+
     env = "XCURSOR_SIZE, 24";
 
-    master = "new_status = slave";
+    master = {
+      new_status = "slave";
+    };
 
-    misc = "force_default_wallpaper = 0";
+    misc = {
+      force_default_wallpaper = 0;
+    };
   };
 }

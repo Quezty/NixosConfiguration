@@ -30,6 +30,8 @@
 
     environment.systemPackages = with pkgs; [
       waybar # Fancy bar at the top :)
+      waybar-mpris
+      playerctl
       hyprland # Grabbing the hyprland package
       wl-clipboard # Clipboard 
       dunst # Notification daemon

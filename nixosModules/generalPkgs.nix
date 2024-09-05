@@ -21,6 +21,8 @@
       wl-clipboard
       pavucontrol
       home-manager
+      xfce.thunar
+      killall
     ];
   };
 }

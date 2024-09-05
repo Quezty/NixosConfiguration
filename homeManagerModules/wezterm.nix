@@ -18,6 +18,7 @@
       extraConfig = ''
         return {
           color_scheme = "rose-pine-moon",
+          -- [[window_background_opacity = 0.5,]] --
           enable_wayland = false,
           enable_tab_bar = false,
           font = wezterm.font("JetBrainsMono Nerd Font", {weight="Bold", stretch="Normal", style="Normal"}),
@@ -43,7 +44,7 @@
           background = {
             {
               source = {
-                File = "/home/joachims/repos/NixosConfiguration/common/wezterm-background.jpg",
+                File = "/home/joachims/repos/hyprlandconf/backgrounds/samuraiNord.jpg",
               },
               hsb = {
                 hue = 1.0,
