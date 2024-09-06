@@ -28,10 +28,10 @@
       "$mainMod, J, movefocus, d"
 
       # Move windows around with mainMod + shift + H, J, K, L   
-      "SUPER SHIFT, H, movewindow, l"
-      "SUPER SHIFT, L, movewindow, r"
-      "SUPER SHIFT, K, movewindow, u"
-      "SUPER SHIFT, J, movewindow, d"
+      "$mainMod SHIFT, H, movewindow, l"
+      "$mainMod SHIFT, L, movewindow, r"
+      "$mainMod SHIFT, K, movewindow, u"
+      "$mainMod SHIFT, J, movewindow, d"
       
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, 1, workspace, 1"
