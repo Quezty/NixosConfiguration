@@ -30,8 +30,10 @@
 
     environment.systemPackages = with pkgs; [
       waybar # Fancy bar at the top :)
+      # Packages that are used in my waybar conf to have a media player
       waybar-mpris
       playerctl
+      
       hyprland # Grabbing the hyprland package
       wl-clipboard # Clipboard 
       dunst # Notification daemon
