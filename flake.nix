@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    my-nixvim.url = "github:Quezty/Nixvim-configuration";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, my-nixvim, ... }@inputs: 
     let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,6 +48,7 @@
             home-manager.users.joachims = import ./hosts/desktop/home.nix;
           }
         ];
+
       };     
     };
 }

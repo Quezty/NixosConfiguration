@@ -17,7 +17,6 @@
 
   programs.zsh.enable = true;
 
-
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
@@ -69,6 +68,7 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
+    inputs.my-nixvim.packages.x86_64-linux.default
   ];
 
   fonts.packages = with pkgs; [
