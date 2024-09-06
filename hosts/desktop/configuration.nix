@@ -68,7 +68,7 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim 
-    inputs.my-nixvim.packages.x86_64-linux.default
+    inputs.my-nixvim.packages.${system}.default
   ];
 
   fonts.packages = with pkgs; [

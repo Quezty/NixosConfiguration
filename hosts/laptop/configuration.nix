@@ -54,6 +54,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     brightnessctl
+    inputs.my-nixvim.packages.${system}.default
   ];
 
   fonts.packages = with pkgs; [

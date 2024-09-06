@@ -48,7 +48,6 @@
             home-manager.users.joachims = import ./hosts/desktop/home.nix;
           }
         ];
-
       };     
     };
 }
