@@ -3,7 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    my-nixvim.url = "github:Quezty/Nixvim-configuration";
+    repo = {
+      url = "github:Quezty/Nixvim-configuration";
+      flake = false;
+      ref = "main";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
