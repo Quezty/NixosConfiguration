@@ -9,3 +9,5 @@ I have used a flake to be able to build from the different host folders. The cur
 ```sudo nixos-rebuild switch --flake .#desktop``` <br>
 and <br>
 ```sudo nixos-rebuild switch --flake .#laptop```
+
+This is about the time where you're probably asking yourself, but what's the difference? The difference in the two options lay in which of my modules I have enabled on them by default. The laptop for example, uses hyprland, and the desktop uses plasma by default. The desktop version has added support for nvidia, the laptop option does not. Those are so far the main differences, but there will be more as my config grows and I tinker more with it.
