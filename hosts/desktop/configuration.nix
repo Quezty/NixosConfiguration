@@ -57,7 +57,7 @@
   users.users.joachims = {
     isNormalUser = true;
     description = "Joachim Storli";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
 
   # Allow unfree packages

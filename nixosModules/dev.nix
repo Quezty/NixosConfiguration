@@ -18,6 +18,7 @@
       inetutils
       nmap
       vscode
+      tio
     ];
   };
 }

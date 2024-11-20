@@ -23,6 +23,7 @@
       home-manager
       xfce.thunar
       killall
+      _1password-gui
     ];
   };
 }
