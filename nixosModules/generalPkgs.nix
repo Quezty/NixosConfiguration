@@ -24,6 +24,7 @@
       xfce.thunar
       killall
       _1password-gui
+      unetbootin
     ];
   };
 }

@@ -21,7 +21,7 @@
           -- [[window_background_opacity = 0.5,]] --
           enable_wayland = false,
           enable_tab_bar = false,
-          font = wezterm.font("JetBrainsMono Nerd Font", {weight="Bold", stretch="Normal", style="Normal"}),
+          font = wezterm.font("iosevka nerd font", {weight="Bold", stretch="Normal", style="Normal"}),
           leader = {key="Space", mods = "CTRL", timeout_milliseconds = 1000},
           keys = {
             {key="u", mods="LEADER", action = wezterm.action.SplitVertical ({domain = "CurrentPaneDomain"})},
@@ -53,6 +53,7 @@
               },
               width = "100%",
               height = "100%",
+              opacity = 0,
             },
             {
               source = {

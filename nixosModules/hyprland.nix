@@ -45,6 +45,9 @@
       grim # Take picture of screen or region selected by Slurp
       slurp # Select region of screen
       imv # View images in the terminal, supported in kitty
+
+
+      bibata-cursors
     ];
 
     hardware = {

@@ -6,11 +6,11 @@
     ];
 
   # Disabling or enabling my own modules  
-  useHyprland.enable = false;
+  useHyprland.enable = true;
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;
-  useKDEPlasma.enable = true;
+  useKDEPlasma.enable = false;
   addDistrobox.enable = true;
   addSound.enable = true;
 
@@ -26,11 +26,12 @@
       finegrained = false;
     }; 
     nvidiaSettings = true;
+    open = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  hardware.graphics.enable = true;
+  # hardware.graphics.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -69,11 +70,11 @@
   environment.systemPackages = with pkgs; [
     vim 
     inputs.my-nixvim.packages.${system}.default
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
-    nerdfonts
-    font-awesome_5
+    nerd-fonts.iosevka
   ];
 
   security.rtkit.enable = true;
@@ -83,6 +84,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  networking.hosts = {
+    "10.0.0.12" = ["tiny-junty"];
+    "10.0.0.13" = ["ubuntu-box"];
   };
 
   # This value determines the NixOS release from which the default
