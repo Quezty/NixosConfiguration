@@ -222,11 +222,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1725663270,
-        "narHash": "sha256-dGQdiYEHDS2sKjMGm/uGLnggBK2y0bPi+LZ6MdwpCQQ=",
+        "lastModified": 1744058944,
+        "narHash": "sha256-WU+dNgS2QgpL5SbHXr2/BTcD+zluJZfQ4NUz/m6oaK0=",
         "owner": "Quezty",
         "repo": "Nixvim-configuration",
-        "rev": "383ea28d4684dc12fa5cfa8659c90f8ade316479",
+        "rev": "cac01fd8f95861708926dc0d9e02eada85f78c73",
         "type": "github"
       },
       "original": {
