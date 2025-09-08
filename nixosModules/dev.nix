@@ -19,6 +19,7 @@
       nmap
       vscode
       tio
+      just
     ];
   };
 }

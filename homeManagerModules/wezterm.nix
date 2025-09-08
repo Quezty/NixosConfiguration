@@ -17,7 +17,7 @@
       enable = true;
       extraConfig = ''
         return {
-          color_scheme = "rose-pine-moon",
+          color_scheme = "Deafened (terminal.sexy)",
           -- [[window_background_opacity = 0.5,]] --
           enable_wayland = false,
           enable_tab_bar = false,
@@ -57,11 +57,11 @@
             },
             {
               source = {
-                Color = "46474f",
+                Color = "3c3836",
               },
               width = "100%",
               height = "100%",
-              opacity = 0.35,
+              opacity = 0.15,
             }
           }
         }

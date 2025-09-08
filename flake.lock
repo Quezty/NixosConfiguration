@@ -158,11 +158,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743360001,
-        "narHash": "sha256-HtpS/ZdgWXw0y+aFdORcX5RuBGTyz3WskThspNR70SM=",
+        "lastModified": 1754457347,
+        "narHash": "sha256-QN9yZ1L5EmR16NNM+hNNzMjARk+FPjUeSE/ds4Kms0E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b6fd653ef8fbeccfd4958650757e91767a65506d",
+        "rev": "ad5d2b4aa770fdc74c80fd682fee0b00a8ad7991",
         "type": "github"
       },
       "original": {
@@ -222,17 +222,14 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1744058944,
-        "narHash": "sha256-WU+dNgS2QgpL5SbHXr2/BTcD+zluJZfQ4NUz/m6oaK0=",
-        "owner": "Quezty",
-        "repo": "Nixvim-configuration",
-        "rev": "cac01fd8f95861708926dc0d9e02eada85f78c73",
-        "type": "github"
+        "lastModified": 1757023584,
+        "narHash": "sha256-sDqaC+qq5XQw0MGb/p0WbwUzrsE+xWN/AX1YhPOvZgo=",
+        "path": "/home/joachims/repos/Nixvim-configuration/",
+        "type": "path"
       },
       "original": {
-        "owner": "Quezty",
-        "repo": "Nixvim-configuration",
-        "type": "github"
+        "path": "/home/joachims/repos/Nixvim-configuration/",
+        "type": "path"
       }
     },
     "nix-darwin": {
@@ -303,11 +300,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1743095683,
-        "narHash": "sha256-gWd4urRoLRe8GLVC/3rYRae1h+xfQzt09xOfb0PaHSk=",
+        "lastModified": 1754214453,
+        "narHash": "sha256-Q/I2xJn/j1wpkGhWkQnm20nShYnG7TI99foDBpXm1SY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+        "rev": "5b09dc45f24cf32316283e62aec81ffee3c3e376",
         "type": "github"
       },
       "original": {
@@ -359,11 +356,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1740132177,
-        "narHash": "sha256-gNc20APKMefFdH5RONBuHhOps14aiMdgIT0I6RaSN64=",
+        "lastModified": 1748096947,
+        "narHash": "sha256-ouuA8LVBXzrbYwPW2vNjh7fC9H2UBud/1tUiIM5vPvM=",
         "owner": "ndom91",
         "repo": "rose-pine-hyprcursor",
-        "rev": "568067f35a85932192bd43ddf64fc05eff850f9f",
+        "rev": "4b02963d0baf0bee18725cf7c5762b3b3c1392f1",
         "type": "github"
       },
       "original": {

@@ -28,9 +28,9 @@
       };
       oh-my-zsh = {
         enable = true;
-        theme = "avit";
+        theme = "gnzh";
       };
-      initExtra = ''
+      initContent = ''
 
 
 eval "$(fzf --zsh)"
@@ -65,7 +65,22 @@ _fzf_comprun() {
 
 }
 
-export BAT_THEME=Nord
+export BAT_THEME=ansi
+
+        gadd(){
+          git add "$@"
+          git status
+        }
+
+        grestore(){
+          git restore --staged "$@"
+          git status
+        }
+
+        lcd() {
+          cd "$@" &&
+          ls
+        }
 
       ''; 
     };

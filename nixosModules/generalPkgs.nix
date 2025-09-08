@@ -13,7 +13,6 @@
   {
     environment.systemPackages = with pkgs; [
       vesktop
-      ventoy-full
       firefox
       spotify
       obsidian
