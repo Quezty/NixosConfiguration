@@ -14,10 +14,10 @@
     services = {
       xserver.enable = true;
       displayManager.sddm.enable = true;
-      xserver.desktopManager.plasma5.enable = true;
+      xserver.desktopManager.plasma.enable = true;
     };
 
-    environment.plasma5.excludePackages = with pkgs.kdePackages; [
+    environment.plasma.excludePackages = with pkgs.kdePackages; [
       konsole
       plasma-browser-integration
     ];

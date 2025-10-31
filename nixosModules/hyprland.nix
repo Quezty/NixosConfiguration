@@ -41,7 +41,7 @@
       hyprpaper # Wallpaper service for hyprland 
       hyprlock # Enables locking of the screen
       kitty # Base terminal for hyprland, will be changed to wezterm later 
-      rofi-wayland # Window switching application
+      rofi # Window switching application
       grim # Take picture of screen or region selected by Slurp
       slurp # Select region of screen
       imv # View images in the terminal, supported in kitty

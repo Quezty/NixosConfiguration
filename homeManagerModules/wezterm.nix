@@ -17,7 +17,7 @@
       enable = true;
       extraConfig = ''
         return {
-          color_scheme = "Deafened (terminal.sexy)",
+          color_scheme = "Grayscale (dark) (terminal.sexy)",
           -- [[window_background_opacity = 0.5,]] --
           enable_wayland = false,
           enable_tab_bar = false,

@@ -9,7 +9,8 @@
     ./zsh.nix
     ./generalPkgs.nix
     ./ssh.nix
-    ./plasma.nix
+    # ./plasma.nix
     ./sound.nix
+    ./adguard.nix
   ];
 }

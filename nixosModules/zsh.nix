@@ -9,6 +9,7 @@
     fzf
     pfetch
     neofetch
+    fastfetch
     btop
   ];
 }

@@ -10,9 +10,10 @@
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;
-  useKDEPlasma.enable = false;
+#   useKDEPlasma.enable = false;
   addDistrobox.enable = true;
   addSound.enable = true;
+  adGuard.enable = true;
 
 
   programs.zsh.enable = true;
