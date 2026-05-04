@@ -1,58 +1,68 @@
 {
   description = "Nixos config flake";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/de523ce492491a2a622df1a11d14632577867da5";
     my-nixvim.url = "path:/home/joachims/repos/Nixvim-configuration/";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = { self, nixpkgs, home-manager, my-nixvim, ... }@inputs: 
-    let 
+  outputs = { self, nixpkgs, home-manager, my-nixvim, ... }@inputs:
+    let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      sharedModules = [
+        ./nixosModules
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              openldap = prev.openldap.overrideAttrs (_: {
+                doCheck = false;
+              });
+            })
+          ];
+        }
+      ];
     in
     {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
+        modules = sharedModules ++ [
           ./hosts/laptop/configuration.nix
-          ./nixosModules
-          home-manager.nixosModules.home-manager 
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             home-manager.users.joachimos = import ./hosts/laptop/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
       };
-
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
+        modules = sharedModules ++ [
           ./hosts/desktop/configuration.nix
-          ./nixosModules
-          home-manager.nixosModules.home-manager 
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-
             home-manager.users.joachims = import ./hosts/desktop/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
-      };     
+      };
     };
 }

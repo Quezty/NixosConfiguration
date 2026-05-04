@@ -20,6 +20,7 @@
       vscode
       tio
       just
+      yazi
     ];
   };
 }

@@ -7,6 +7,7 @@
 
   # Disabling or enabling my own modules  
   useHyprland.enable = true;
+  # useHyprlandWithNoctalia.enable = true;
   devPackages.enable = true;
   generalPackages.enable = true; 
   sshPort22.enable = false;
@@ -14,6 +15,7 @@
   addDistrobox.enable = true;
   addSound.enable = true;
   adGuard.enable = true;
+  gamingMods.enable = false;
 
 
   programs.zsh.enable = true;
@@ -22,21 +24,24 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement = {
-      enable = false;
-      finegrained = false;
-    }; 
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
     nvidiaSettings = true;
-    open = true;
-
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # hardware.graphics.enable = true;
+  boot.blacklistedKernelModules = [ "ucsi_ccg" ];
+  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];  hardware.graphics.enable = true;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 10;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
+  
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -71,7 +76,6 @@
   environment.systemPackages = with pkgs; [
     vim 
     inputs.my-nixvim.packages.${system}.default
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [

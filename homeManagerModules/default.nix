@@ -6,5 +6,6 @@
     ./zsh.nix
     ./kitty.nix
     # ./hyprland
+    ./noctalia.nix
   ];
 }

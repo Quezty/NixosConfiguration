@@ -17,7 +17,8 @@
       enable = true;
       extraConfig = ''
         return {
-          color_scheme = "Grayscale (dark) (terminal.sexy)",
+          color_scheme_dirs = { '/home/joachims/.config/wezterm/colors/' },
+          color_scheme = "Noctalia",
           -- [[window_background_opacity = 0.5,]] --
           enable_wayland = false,
           enable_tab_bar = false,

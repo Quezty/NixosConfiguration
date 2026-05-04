@@ -50,7 +50,7 @@ _fzf_compgen_dir () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tre --color=always {} | head -200'"
+export FZF_CTRL_E_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 _fzf_comprun() {
 	local command=$1
@@ -65,7 +65,6 @@ _fzf_comprun() {
 
 }
 
-export BAT_THEME=ansi
 
         gadd(){
           git add "$@"
