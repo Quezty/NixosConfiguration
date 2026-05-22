@@ -5,6 +5,7 @@
     ./git.nix
     ./zsh.nix
     ./kitty.nix
+    ./neovim.nix
     # ./hyprland
   ];
 }

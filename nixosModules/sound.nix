@@ -9,7 +9,7 @@
     };
   };
 
-  config = lib.mkIf config.addDistrobox.enable 
+  config = lib.mkIf config.addSound.enable 
   {
     security.rtkit.enable = true;
     services.pipewire = {

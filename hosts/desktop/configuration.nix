@@ -27,7 +27,7 @@
       finegrained = false;
     }; 
     nvidiaSettings = true;
-    open = true;
+    open = false;
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
@@ -69,23 +69,12 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim 
-    inputs.my-nixvim.packages.${system}.default
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    vim
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
   ];
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
 
   networking.hosts = {
     "10.0.0.12" = ["tiny-junty"];

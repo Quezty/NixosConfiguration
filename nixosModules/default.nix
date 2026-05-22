@@ -12,5 +12,6 @@
     # ./plasma.nix
     ./sound.nix
     ./adguard.nix
+    ./keyboard.nix
   ];
 }

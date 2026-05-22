@@ -9,14 +9,14 @@
     };
   };
 
-  config = lib.mkIf config.devPackages.enable
+  config = lib.mkIf config.adGuard.enable
   {
     networking = {
       firewall = {
         allowedTCPPorts = [ 3333 3000 80 ];
         allowedUDPPorts = [ 53 ];
       };
-      nameservers = [ "127.0.0.1:53"];
+      nameservers = [ "127.0.0.1" ];
     };
 
     services = {

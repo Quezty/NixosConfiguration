@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ...}: 
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     devPackages = {
       enable = lib.mkOption {
@@ -9,17 +13,18 @@
     };
   };
 
-  config = lib.mkIf config.devPackages.enable 
-  {
-    environment.systemPackages = with pkgs; [
-      insomnia
-      gh
-      lazygit
-      inetutils
-      nmap
-      vscode
-      tio
-      just
-    ];
-  };
+  config =
+    lib.mkIf config.devPackages.enable
+    {
+      environment.systemPackages = with pkgs; [
+        insomnia
+        gh
+        lazygit
+        inetutils
+        nmap
+        vscode
+        tio
+        just
+      ];
+    };
 }

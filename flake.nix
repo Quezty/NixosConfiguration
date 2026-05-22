@@ -3,20 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    my-nixvim.url = "path:/home/joachims/repos/Nixvim-configuration/";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, my-nixvim, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -51,6 +50,7 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.users.joachims = import ./hosts/desktop/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
       };     

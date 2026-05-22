@@ -54,22 +54,13 @@
   environment.systemPackages = with pkgs; [
     vim 
     brightnessctl
-    inputs.my-nixvim.packages.${system}.default
+    inputs.my-nixvim.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
     nerdfonts
     font-awesome_5
   ];
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -8,7 +8,6 @@
     fd
     fzf
     pfetch
-    neofetch
     fastfetch
     btop
   ];
