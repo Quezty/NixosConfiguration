@@ -1,8 +1,10 @@
-{ pkgs, lib, config, ... }:
-
-
 {
-  options.addGit= {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  options.addGit = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
@@ -10,14 +12,15 @@
     };
   };
 
-
-  config = lib.mkIf config.addGit.enable 
-  {
-    programs.git = {
-      enable = true;
-      userEmail = "storlijoachim@gmail.com";
-      userName = "quezty";
+  config =
+    lib.mkIf config.addGit.enable
+    {
+      programs.git = {
+        enable = true;
+        settings.user = {
+          email = "storlijoachim@gmail.com";
+          name = "quezty";
+        };
+      };
     };
-
-  };
 }
