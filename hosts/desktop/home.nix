@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../../homeManagerModules/default.nix
+    ../../modules/home/default.nix
   ];
 
   home.username = "joachims";

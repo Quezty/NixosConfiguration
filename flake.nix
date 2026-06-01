@@ -29,7 +29,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/laptop/configuration.nix
-        ./nixosModules
+        ./modules/nixos
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -45,7 +45,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/desktop/configuration.nix
-        ./nixosModules
+        ./modules/nixos
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

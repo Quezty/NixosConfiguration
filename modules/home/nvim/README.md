@@ -90,7 +90,7 @@ vim.opt.shiftwidth = 2
 
 ## Workflow
 
-1. Edit files in `homeManagerModules/nvim/`
+1. Edit files in `modules/home/nvim/`
 2. Rebuild (`sudo nixos-rebuild switch --flake .`)
 3. Reopen neovim
 

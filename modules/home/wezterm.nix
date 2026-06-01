@@ -18,6 +18,7 @@
       programs = {
         wezterm.enable = true;
         zoxide.enable = true;
+        fd.enable = true;
       };
 
       xdg.configFile."wezterm" = {
