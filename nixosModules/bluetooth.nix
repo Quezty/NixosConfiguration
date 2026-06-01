@@ -1,13 +1,15 @@
-{ lib, config, ...}:
-
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     addBluetooth = {
-      enable = lib.mkOption  {
+      enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
       };
-    }; 
+    };
   };
 
   config = lib.mkIf config.addBluetooth.enable {

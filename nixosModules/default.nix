@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./bluetooth.nix
     ./dev.nix
