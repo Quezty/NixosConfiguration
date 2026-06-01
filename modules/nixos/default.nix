@@ -6,7 +6,7 @@
     ./tmux.nix
     ./hyprland.nix
     ./zsh.nix
-    ./generalPkgs.nix
+    ./core.nix
     ./ssh.nix
     # ./plasma.nix
     ./sound.nix

@@ -22,13 +22,11 @@
         spotify
         obsidian
         vlc
-        wl-clipboard
         pavucontrol
         home-manager
         thunar
         killall
         _1password-gui
-        unetbootin
       ];
     };
 }
