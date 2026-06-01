@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ...}:
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     adGuard = {
       enable = lib.mkOption {
@@ -9,22 +13,23 @@
     };
   };
 
-  config = lib.mkIf config.adGuard.enable
-  {
-    networking = {
-      firewall = {
-        allowedTCPPorts = [ 3333 3000 80 ];
-        allowedUDPPorts = [ 53 ];
+  config =
+    lib.mkIf config.adGuard.enable
+    {
+      networking = {
+        firewall = {
+          allowedTCPPorts = [3333 3000 80];
+          allowedUDPPorts = [53];
+        };
+        nameservers = ["127.0.0.1"];
       };
-      nameservers = [ "127.0.0.1" ];
-    };
 
-    services = {
-      adguardhome = {
-        enable = true;
-        openFirewall = true;
-        port = 3333;
+      services = {
+        adguardhome = {
+          enable = true;
+          openFirewall = true;
+          port = 3333;
+        };
       };
     };
-  };
 }

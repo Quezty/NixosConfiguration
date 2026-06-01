@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ...}: 
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     addDistrobox = {
       enable = lib.mkOption {
@@ -9,12 +13,13 @@
     };
   };
 
-  config = lib.mkIf config.addDistrobox.enable 
-  {
-    environment.systemPackages = with pkgs; [
-      podman
-      distrobox
-    ];
-    virtualisation.podman.enable = true;
-  };
+  config =
+    lib.mkIf config.addDistrobox.enable
+    {
+      environment.systemPackages = with pkgs; [
+        podman
+        distrobox
+      ];
+      virtualisation.podman.enable = true;
+    };
 }

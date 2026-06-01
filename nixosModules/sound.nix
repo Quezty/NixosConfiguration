@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ...}: 
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     addSound = {
       enable = lib.mkOption {
@@ -9,15 +13,16 @@
     };
   };
 
-  config = lib.mkIf config.addSound.enable 
-  {
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
+  config =
+    lib.mkIf config.addSound.enable
+    {
+      security.rtkit.enable = true;
+      services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        wireplumber.enable = true;
+      };
     };
-  };
 }

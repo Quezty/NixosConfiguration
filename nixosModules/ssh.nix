@@ -1,6 +1,8 @@
-{ lib, config, ...}:
-
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     sshPort22 = {
       enable = lib.mkOption {
@@ -10,16 +12,16 @@
     };
   };
 
+  config =
+    lib.mkIf config.sshPort22.enable
+    {
+      # Enabling the ssh daemon and opening port 22
+      services.openssh = {
+        enable = true;
+        settings.PasswordAuthentication = true;
+        ports = [22];
+      };
 
-  config = lib.mkIf config.sshPort22.enable 
-  { 
-    # Enabling the ssh daemon and opening port 22  
-    services.openssh = {
-      enable = true;
-      settings.PasswordAuthentication = true;
-      ports = [22];
+      networking.firewall.allowedTCPPorts = [22];
     };
-      
-    networking.firewall.allowedTCPPorts = [ 22 ];
-  };
 }
