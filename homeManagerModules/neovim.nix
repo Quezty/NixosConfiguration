@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     useNeovim = {
       enable = lib.mkOption {
@@ -21,13 +25,15 @@
         nil # Nix
         lua-language-server
         pyright
-        rust-analyzer rustc cargo
+        rust-analyzer
+        rustc
+        cargo
         typescript-language-server
         typescript
         vscode-langservers-extracted # html, css, json, eslint
         tailwindcss-language-server
         bash-language-server
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         yaml-language-server
         clang-tools # clangd
         marksman

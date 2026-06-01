@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ...}: 
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     generalPackages = {
       enable = lib.mkOption {
@@ -9,21 +13,22 @@
     };
   };
 
-  config = lib.mkIf config.generalPackages.enable 
-  {
-    environment.systemPackages = with pkgs; [
-      vesktop
-      firefox
-      spotify
-      obsidian
-      vlc
-      wl-clipboard
-      pavucontrol
-      home-manager
-      xfce.thunar
-      killall
-      _1password-gui
-      unetbootin
-    ];
-  };
+  config =
+    lib.mkIf config.generalPackages.enable
+    {
+      environment.systemPackages = with pkgs; [
+        vesktop
+        firefox
+        spotify
+        obsidian
+        vlc
+        wl-clipboard
+        pavucontrol
+        home-manager
+        thunar
+        killall
+        _1password-gui
+        unetbootin
+      ];
+    };
 }
