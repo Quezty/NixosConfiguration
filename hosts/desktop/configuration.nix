@@ -1,20 +1,22 @@
-{ inputs, config, pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  # Disabling or enabling my own modules  
+  # Disabling or enabling my own modules
   useHyprland.enable = true;
   devPackages.enable = true;
-  generalPackages.enable = true; 
+  generalPackages.enable = true;
   sshPort22.enable = false;
-#   useKDEPlasma.enable = false;
+  #   useKDEPlasma.enable = false;
   addDistrobox.enable = true;
   addSound.enable = true;
   adGuard.enable = true;
-
 
   programs.zsh.enable = true;
 
@@ -25,7 +27,7 @@
     powerManagement = {
       enable = false;
       finegrained = false;
-    }; 
+    };
     nvidiaSettings = true;
     open = false;
 
@@ -38,7 +40,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "riven"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -59,13 +61,13 @@
   users.users.joachims = {
     isNormalUser = true;
     description = "Joachim Storli";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = ["networkmanager" "wheel" "dialout"];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -88,5 +90,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

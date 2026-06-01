@@ -1,19 +1,19 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../homeManagerModules/default.nix
   ];
 
-
   home.username = "joachims";
   home.homeDirectory = "/home/joachims";
-  
+
   useWezterm.enable = true;
   addGit.enable = true;
-  useKitty.enable = true;
+  useKitty.enable = false;
   useNeovim.enable = true;
-
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 

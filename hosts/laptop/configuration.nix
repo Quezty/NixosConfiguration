@@ -1,21 +1,22 @@
-{ inputs, config, pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  # Disabling or enabling my own modules  
+  # Disabling or enabling my own modules
   useHyprland.enable = true;
   devPackages.enable = true;
-  generalPackages.enable = true; 
+  generalPackages.enable = true;
   sshPort22.enable = false;
   addBluetooth.enable = true;
   addSound.enable = true;
 
-
   programs.zsh.enable = true;
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -42,17 +43,17 @@
   users.users.joachimos = {
     isNormalUser = true;
     description = "Joachim Olsen Storli";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     brightnessctl
     inputs.my-nixvim.packages.${pkgs.system}.default
   ];
@@ -69,5 +70,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
