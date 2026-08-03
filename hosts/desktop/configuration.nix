@@ -17,6 +17,7 @@
   addDistrobox.enable = true;
   addSound.enable = true;
   adGuard.enable = true;
+  gaming.enable = true;
 
   programs.zsh.enable = true;
 

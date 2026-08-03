@@ -12,5 +12,6 @@
     ./sound.nix
     ./adguard.nix
     ./keyboard.nix
+    ./gaming.nix
   ];
 }
