@@ -40,11 +40,11 @@
       ];
     };
 
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.riven = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/desktop/configuration.nix
+        ./hosts/riven/configuration.nix
         ./modules/nixos
         home-manager.nixosModules.home-manager
         {
@@ -52,7 +52,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
 
-          home-manager.users.joachims = import ./hosts/desktop/home.nix;
+          home-manager.users.joachims = import ./hosts/riven/home.nix;
           home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];

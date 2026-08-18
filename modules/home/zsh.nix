@@ -29,7 +29,7 @@
           tls = "eza --tree --level=2 --icons=always --color=always";
           tlsd = "eza --tree --level=6 --icons=always --color=always";
           nls = "ls";
-          rebuildDesktop = "sudo nixos-rebuild switch --flake ~/repos/NixosConfiguration#desktop";
+          rebuildRiven = "sudo nixos-rebuild switch --flake ~/repos/NixosConfiguration#riven";
           rebuildLaptop = "sudo nixos-rebuild switch --flake ~/repos/NixosConfiguration#laptop";
         };
         oh-my-zsh = {
