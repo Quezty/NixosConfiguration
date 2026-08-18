@@ -35,8 +35,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # hardware.graphics.enable = true;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -78,11 +76,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
   ];
-
-  networking.hosts = {
-    "10.0.0.12" = ["tiny-junty"];
-    "10.0.0.13" = ["ubuntu-box"];
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
