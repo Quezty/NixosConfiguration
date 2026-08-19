@@ -24,18 +24,20 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.antiopedee = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/laptop/configuration.nix
+        ./hosts/antiopedee/configuration.nix
         ./modules/nixos
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
 
-          home-manager.users.joachimos = import ./hosts/laptop/home.nix;
+          home-manager.users.joachimos = import ./hosts/antiopedee/home.nix;
+          home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];
     };
