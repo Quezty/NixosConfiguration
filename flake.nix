@@ -36,7 +36,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
 
-          home-manager.users.joachims = import ./hosts/antiopedee/home.nix;
+          home-manager.users.joachimos = import ./hosts/antiopedee/home.nix;
           home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];

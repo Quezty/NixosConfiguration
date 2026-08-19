@@ -13,7 +13,7 @@
   devPackages.enable = true;
   generalPackages.enable = true;
   sshPort22.enable = false;
-  useKDEPlasma.enable = false;
+  # useKDEPlasma.enable = false;
   addDistrobox.enable = false;
   addSound.enable = true;
   adGuard.enable = false;
