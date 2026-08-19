@@ -13,8 +13,11 @@
   devPackages.enable = true;
   generalPackages.enable = true;
   sshPort22.enable = false;
-  addBluetooth.enable = true;
+  useKDEPlasma.enable = false;
+  addDistrobox.enable = false;
   addSound.enable = true;
+  adGuard.enable = false;
+  gaming.enable = false;
 
   programs.zsh.enable = true;
 
@@ -22,7 +25,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "antiopedee"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -55,12 +58,10 @@
   environment.systemPackages = with pkgs; [
     vim
     brightnessctl
-    inputs.my-nixvim.packages.${pkgs.system}.default
   ];
 
   fonts.packages = with pkgs; [
-    nerdfonts
-    font-awesome_5
+    nerd-fonts.iosevka
   ];
 
   # This value determines the NixOS release from which the default
