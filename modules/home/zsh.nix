@@ -34,7 +34,8 @@
         };
         oh-my-zsh = {
           enable = true;
-          theme = "gnzh";
+          custom = "${./.}";
+          theme = "quezty";
         };
         initContent = ''
 
