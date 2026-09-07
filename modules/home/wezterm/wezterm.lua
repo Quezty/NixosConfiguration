@@ -27,7 +27,7 @@ return {
 	color_scheme = "Noctalia",
 	enable_wayland = false,
 	enable_tab_bar = false,
-	font = wezterm.font("iosevka nerd font", { weight = "Bold", stretch = "Normal", style = "Normal" }),
+	font = wezterm.font("MartianMono Nerd Font", { weight = "Bold", stretch = "Normal", style = "Normal" }),
 	leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 },
 	keys = {
 		{

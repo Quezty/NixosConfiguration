@@ -75,6 +75,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
+    nerd-fonts.martian-mono
   ];
 
   # This value determines the NixOS release from which the default
