@@ -25,6 +25,7 @@
         vscode
         tio
         just
+        claude-code
       ];
     };
 }
