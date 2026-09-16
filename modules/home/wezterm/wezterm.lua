@@ -85,6 +85,16 @@ return {
 			mods = "LEADER",
 			action = sessionizer.show(schema),
 		},
+		{
+			key = "d",
+			mods = "LEADER",
+			action = wezterm.action.SwitchToWorkspace({ name = "default" }),
+		},
+		{
+			key = "s",
+			mods = "LEADER",
+			action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+		},
 	},
 
 	inactive_pane_hsb = {
