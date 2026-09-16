@@ -24,10 +24,21 @@
       };
 
       services.xserver.enable = true;
-      services.displayManager.sddm = {
+      #services.displayManager.sddm = {
+      #enable = true;
+      #settings.Autologin = {
+      #Session = "hyprland.desktop";
+      #};
+      #};
+      services.displayManager.noctalia-greeter = {
         enable = true;
-        settings.Autologin = {
-          Session = "hyprland.desktop";
+        settings = {
+          cursor.size = 24;
+          keyboard.layout = "us";
+        };
+        cursorTheme = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Ice";
         };
       };
       services.displayManager.defaultSession = "hyprland";
