@@ -14,6 +14,7 @@
   addGit.enable = true;
   useKitty.enable = false;
   useNeovim.enable = true;
+  useSpicetify.enable = true;
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 

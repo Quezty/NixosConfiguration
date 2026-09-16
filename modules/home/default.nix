@@ -9,5 +9,6 @@
     ./zsh.nix
     ./kitty.nix
     ./neovim.nix
+    ./spicetify.nix
   ];
 }

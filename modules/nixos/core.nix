@@ -19,7 +19,6 @@
       environment.systemPackages = with pkgs; [
         vesktop
         firefox
-        spotify
         obsidian
         vlc
         pavucontrol
