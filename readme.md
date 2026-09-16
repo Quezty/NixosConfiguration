@@ -4,15 +4,55 @@
 
 What I want to achieve with this config is to have separate configs for my systems. In addition, I want to have a modular system so I can add and remove modules on the fly as my needs for that system differs.
 
-### How it works (Current state)
-I have used a flake to be able to build from the different host folders. The current options to rebuild are: <br>
+### How it works
 
-`sudo nixos-rebuild switch --flake .#desktop` <br>
-`sudo nixos-rebuild switch --flake .#laptop`  <br>
+The configuration is built as a flake with per-host definitions. Each host has its own `configuration.nix` and `home.nix`, while shared functionality lives in toggle-able modules under `modules/`.
 
-and soon <br>
+The current options to rebuild are:
 
-`sudo nixos-rebuild switch --flake .#laptop-nvidia` <br>
-`sudo nixos-rebuild switch --flake .#headless`
+`sudo nixos-rebuild switch --flake .#riven` (desktop, Nvidia + Hyprland) <br>
+`sudo nixos-rebuild switch --flake .#antiopedee` (laptop, Hyprland) <br>
 
-This is about the time where you're probably asking yourself, but what's the difference? The difference in the two options lay in which of my modules I have enabled on them by default. The laptop for example, uses hyprland, and the desktop uses plasma by default. The desktop version has added support for nvidia, the laptop option does not. Those are so far the main differences, but there will be more as my config grows and I tinker more with it.
+The rebuild options are the hostname that each system has. The names are for now meant to be Destiny 2 references.
+Riven is my main workstation and got its name from it managing to do what I want it, but in an inconvenient or annoying way.
+Antiopedee is an old laptop of mine that I have mostly used to code on the go and has served me well. Hence it got the name of my ol' reliable in Destiny, Antiope-D
+
+### Structure
+
+```
+.
+├── flake.nix                   # Flake entry point
+├── hosts/
+│   ├── riven/                  # Desktop (Nvidia, Hyprland, gaming)
+│   │   ├── configuration.nix
+│   │   ├── home.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop/
+│       ├── configuration.nix
+│       ├── home.nix
+│       └── hardware-configuration.nix
+├── modules/
+│   ├── nixos/                  # System-level modules
+│   │   ├── core.nix            # General packages (Firefox, Obsidian, etc.)
+│   │   ├── hyprland.nix
+│   │   ├── sound.nix
+│   │   ├── gaming.nix          # Steam
+│   │   ├── dev.nix
+│   │   ├── distrobox.nix
+│   │   ├── ssh.nix
+│   │   ├── adguard.nix
+│   │   ├── bluetooth.nix
+│   │   ├── keyboard.nix
+│   │   ├── tmux.nix
+│   │   └── zsh.nix
+│   └── home/                   # Home Manager modules
+│       ├── neovim.nix
+│       ├── wezterm.nix
+│       ├── kitty.nix
+│       ├── git.nix
+│       └── zsh.nix
+```
+
+### Modules
+
+Modules are toggle-able via `enable` options in each host's `configuration.nix` and `home.nix`. For example, `riven` enables Hyprland, gaming, and Neovim. This makes it easy to tailor each host without duplicating configuration.
