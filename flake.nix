@@ -64,5 +64,22 @@
         }
       ];
     };
+    nixosConfigurations.lumina = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/lumina/configuration.nix
+        ./modules/nixos
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+
+          home-manager.users.joachims = import ./hosts/lumina/home.nix;
+          home-manager.extraSpecialArgs = {inherit inputs;};
+        }
+      ];
+    };
   };
 }
